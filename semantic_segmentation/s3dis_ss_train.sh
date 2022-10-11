@@ -7,7 +7,7 @@
 NAME=pre_new_S3_ss_20_2W
 
 echo $NAME
-DATASET_PATH=/home/aidrive/luoly/datasets/S3DIS/Stanford_preprocessing/semantic/20
+DATASET_PATH=/DATA_EDS/luoly/datasets/S3DIS/Stanford_preprocessing/semantic/20
 TRAIN_BATCH_SIZE=20
 LR=0.1
 Scheduler=PolyLR
@@ -18,7 +18,7 @@ python -u new.py \
     --seed 42 \
     --train_dataset StanfordArea5Dataset \
     --val_dataset StanfordArea5testDataset \
-    --stanford3d_test_path /home/aidrive/luoly/datasets/S3DIS/Stanford_preprocessing/semantic/full \
+    --stanford3d_test_path /DATA_EDS/luoly/datasets/S3DIS/Stanford_preprocessing/semantic/full \
     --checkpoint_dir checkpoints \
     --num_workers 8 \
     --validate_step 100 \
@@ -30,10 +30,10 @@ python -u new.py \
     --do_train \
     --run_name $RUN_NAME \
     --model $MODEL \
-    --weights /home/aidrive/luoly/code/S3DIS_semantic/pretrain/log/2022-06-22.22:45:21/pre_ss_2W.pth \
+    --weights /DATA_EDS/luoly/code/S3DIS_semantic/pretrain/log/2022-06-22.22:45:21/pre_ss_2W.pth \
     --lr $LR \
     --train_batch_size $TRAIN_BATCH_SIZE  \
     --stanford3d_path $DATASET_PATH \
-    --wandb True
+    --wandb False
 
 

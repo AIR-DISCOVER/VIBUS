@@ -2,27 +2,27 @@ import argparse
 
 
 def str2opt(arg):
-  assert arg in ['SGD', 'Adam']
-  return arg
+    assert arg in ['SGD', 'Adam']
+    return arg
 
 
 def str2scheduler(arg):
-  assert arg in ['StepLR', 'PolyLR', 'ExpLR', 'SquaredLR']
-  return arg
+    assert arg in ['StepLR', 'PolyLR', 'ExpLR', 'SquaredLR']
+    return arg
 
 
 def str2bool(v):
-  return v.lower() in ('true', '1')
+    return v.lower() in ('true', '1')
 
 
 def str2list(l):
-  return [int(i) for i in l.split(',')]
+    return [int(i) for i in l.split(',')]
 
 
 def add_argument_group(name):
-  arg = parser.add_argument_group(name)
-  arg_lists.append(arg)
-  return arg
+    arg = parser.add_argument_group(name)
+    arg_lists.append(arg)
+    return arg
 
 
 arg_lists = []
@@ -31,36 +31,22 @@ parser = argparse.ArgumentParser()
 # Network
 net_arg = add_argument_group('Network')
 net_arg.add_argument('--model', type=str, default='Res16UNet34C', help='Model name')
-net_arg.add_argument(
-    '--conv1_kernel_size', type=int, default=5, help='First layer conv kernel size')
-net_arg.add_argument(
-    '--weights_for_inner_model',
-    type=str2bool,
-    default=False,
-    help='Weights for model inside a wrapper')
-net_arg.add_argument(
-    '--dilations', type=str2list, default='1,1,1,1', help='Dilations used for ResNet or DenseNet')
+net_arg.add_argument('--conv1_kernel_size', type=int, default=5, help='First layer conv kernel size')
+net_arg.add_argument('--weights', type=str, default=None, help='Saved weights to load')
+net_arg.add_argument('--weights_for_inner_model', type=str2bool, default=False, help='Weights for model inside a wrapper')
+net_arg.add_argument('--dilations', type=str2list, default='1,1,1,1', help='Dilations used for ResNet or DenseNet')
+net_arg.add_argument('--num_classes', type=int, default=20, help='Number of classes in the dataset')
 
 # Wrappers
 net_arg.add_argument('--wrapper_type', default='None', type=str, help='Wrapper on the network')
-net_arg.add_argument(
-    '--wrapper_region_type',
-    default=1,
-    type=int,
-    help='Wrapper connection types 0: hypercube, 1: HYPER_CROSS, (default: 1)')
+net_arg.add_argument('--wrapper_region_type', default=1, type=int, help='Wrapper connection types 0: hypercube, 1: HYPER_CROSS, (default: 1)')
 net_arg.add_argument('--wrapper_kernel_size', default=3, type=int, help='Wrapper kernel size')
-net_arg.add_argument(
-    '--wrapper_lr',
-    default=1e-1,
-    type=float,
-    help='Used for freezing or using small lr for the base model, freeze if negative')
+net_arg.add_argument('--wrapper_lr', default=1e-1, type=float, help='Used for freezing or using small lr for the base model, freeze if negative')
 
 # Meanfield arguments
-net_arg.add_argument(
-    '--meanfield_iterations', type=int, default=10, help='Number of meanfield iterations')
+net_arg.add_argument('--meanfield_iterations', type=int, default=10, help='Number of meanfield iterations')
 net_arg.add_argument('--crf_spatial_sigma', default=1, type=int, help='Trilateral spatial sigma')
-net_arg.add_argument(
-    '--crf_chromatic_sigma', default=12, type=int, help='Trilateral chromatic sigma')
+net_arg.add_argument('--crf_chromatic_sigma', default=12, type=int, help='Trilateral chromatic sigma')
 
 # Optimizer arguments
 opt_arg = add_argument_group('Optimizer')
@@ -101,8 +87,7 @@ data_arg.add_argument('--pre_point_lim', type=int, default=-1)
 data_arg.add_argument('--batch_size', type=int, default=1)
 data_arg.add_argument('--test_batch_size', type=int, default=1)
 data_arg.add_argument('--cache_data', type=str2bool, default=False)
-data_arg.add_argument(
-    '--num_workers', type=int, default=0, help='num workers for train/test dataloader')
+data_arg.add_argument('--num_workers', type=int, default=0, help='num workers for train/test dataloader')
 data_arg.add_argument('--num_val_workers', type=int, default=1, help='num workers for val dataloader')
 data_arg.add_argument('--ignore_label', type=int, default=255)
 data_arg.add_argument('--return_transformation', type=str2bool, default=False)
@@ -112,38 +97,18 @@ data_arg.add_argument('--train_limit_numpoints', type=int, default=0)
 
 # Point Cloud Dataset
 
-data_arg.add_argument(
-    '--synthia_path',
-    type=str,
-    default='/home/chrischoy/datasets/Synthia/Synthia4D',
-    help='Point Cloud dataset root dir')
+data_arg.add_argument('--synthia_path', type=str, default='/home/chrischoy/datasets/Synthia/Synthia4D', help='Point Cloud dataset root dir')
 # For temporal sequences
 data_arg.add_argument('--temporal_rand_dilation', type=str2bool, default=False)
 data_arg.add_argument('--temporal_rand_numseq', type=str2bool, default=False)
 
-data_arg.add_argument(
-    '--scannet_path',
-    type=str,
-    default='/home/aidrive/luoly/datasets/Scannet/instance/20/train',
-    help='Scannet online voxelization dataset root dir')
+data_arg.add_argument('--scannet_path', type=str, default='/home/aidrive/luoly/datasets/Scannet/instance/20/train', help='Scannet online voxelization dataset root dir')
 
-data_arg.add_argument(
-    '--scannet_test_path',
-    type=str,
-    default='/home/aidrive/luoly/datasets/Scannet/instance/full/train',
-    help='Scannet online voxelization dataset root dir')
+data_arg.add_argument('--scannet_test_path', type=str, default='/home/aidrive/luoly/datasets/Scannet/instance/full/train', help='Scannet online voxelization dataset root dir')
 
-data_arg.add_argument(
-    '--stanford3d_path',
-    type=str,
-    default='/home/aidrive/luoly/datasets/S3DIS/Stanford_preprocessing/instance/full',
-    help='Stanford precropped dataset root dir')
+data_arg.add_argument('--stanford3d_path', type=str, default='/home/aidrive/luoly/datasets/S3DIS/Stanford_preprocessing/instance/full', help='Stanford precropped dataset root dir')
 
-data_arg.add_argument(
-    '--stanford3d_test_path',
-    type=str,
-    default='/home/aidrive/luoly/datasets/S3DIS/Stanford_preprocessing/instance/full',
-    help='Stanford precropped dataset root dir')
+data_arg.add_argument('--stanford3d_test_path', type=str, default='/home/aidrive/luoly/datasets/S3DIS/Stanford_preprocessing/instance/full', help='Stanford precropped dataset root dir')
 
 # Training / test parameters
 train_arg = add_argument_group('Training')
@@ -153,25 +118,14 @@ train_arg.add_argument('--test_stat_freq', type=int, default=100, help='print fr
 train_arg.add_argument('--test_stat_freq1', type=int, default=312, help='print frequency')
 train_arg.add_argument('--save_freq', type=int, default=500, help='save frequency')
 train_arg.add_argument('--val_freq', type=int, default=1000, help='validation frequency')
-train_arg.add_argument(
-    '--empty_cache_freq', type=int, default=1, help='Clear pytorch cache frequency')
+train_arg.add_argument('--empty_cache_freq', type=int, default=1, help='Clear pytorch cache frequency')
 train_arg.add_argument('--train_phase', type=str, default='train', help='Dataset for training')
 train_arg.add_argument('--val_phase', type=str, default='val', help='Dataset for validation')
-train_arg.add_argument(
-    '--overwrite_weights', type=str2bool, default=True, help='Overwrite checkpoint during training')
-train_arg.add_argument(
-    '--resume', default=None, type=str, help='path to latest checkpoint (default: none)')
-train_arg.add_argument(
-    '--resume_optimizer',
-    default=True,
-    type=str2bool,
-    help='Use checkpoint optimizer states when resume training')
+train_arg.add_argument('--overwrite_weights', type=str2bool, default=True, help='Overwrite checkpoint during training')
+train_arg.add_argument('--resume', default=None, type=str, help='path to latest checkpoint (default: none)')
+train_arg.add_argument('--resume_optimizer', default=True, type=str2bool, help='Use checkpoint optimizer states when resume training')
 train_arg.add_argument('--eval_upsample', type=str2bool, default=False)
-train_arg.add_argument(
-    '--lenient_weight_loading',
-    type=str2bool,
-    default=False,
-    help='Weights with the same size will be loaded')
+train_arg.add_argument('--lenient_weight_loading', type=str2bool, default=False, help='Weights with the same size will be loaded')
 
 # Distributed Training configurations
 distributed_arg = add_argument_group('Distributed')
@@ -187,22 +141,14 @@ distributed_arg.add_argument('--bucket_cap_mb', type=int, default=25)
 
 # Data augmentation
 data_aug_arg = add_argument_group('DataAugmentation')
-data_aug_arg.add_argument(
-    '--use_feat_aug', type=str2bool, default=True, help='Simple feat augmentation')
-data_aug_arg.add_argument(
-    '--data_aug_color_trans_ratio', type=float, default=0.10, help='Color translation range')
-data_aug_arg.add_argument(
-    '--data_aug_color_jitter_std', type=float, default=0.05, help='STD of color jitter')
+data_aug_arg.add_argument('--use_feat_aug', type=str2bool, default=True, help='Simple feat augmentation')
+data_aug_arg.add_argument('--data_aug_color_trans_ratio', type=float, default=0.10, help='Color translation range')
+data_aug_arg.add_argument('--data_aug_color_jitter_std', type=float, default=0.05, help='STD of color jitter')
 data_aug_arg.add_argument('--normalize_color', type=str2bool, default=True)
 data_aug_arg.add_argument('--data_aug_scale_min', type=float, default=0.9)
 data_aug_arg.add_argument('--data_aug_scale_max', type=float, default=1.1)
-data_aug_arg.add_argument(
-    '--data_aug_hue_max', type=float, default=0.5, help='Hue translation range. [0, 1]')
-data_aug_arg.add_argument(
-    '--data_aug_saturation_max',
-    type=float,
-    default=0.20,
-    help='Saturation translation range, [0, 1]')
+data_aug_arg.add_argument('--data_aug_hue_max', type=float, default=0.5, help='Hue translation range. [0, 1]')
+data_aug_arg.add_argument('--data_aug_saturation_max', type=float, default=0.20, help='Saturation translation range, [0, 1]')
 
 # Test
 test_arg = add_argument_group('Test')
@@ -212,16 +158,8 @@ test_arg.add_argument('--visualize_path', type=str, default='outputs/visualize')
 test_arg.add_argument('--save_prediction', type=str2bool, default=False)
 test_arg.add_argument('--save_pred_dir', type=str, default='outputs/pred')
 test_arg.add_argument('--test_phase', type=str, default='test', help='Dataset for test')
-test_arg.add_argument(
-    '--evaluate_original_pointcloud',
-    type=str2bool,
-    default=False,
-    help='Test on the original pointcloud space during network evaluation using voxel projection.')
-test_arg.add_argument(
-    '--test_original_pointcloud',
-    type=str2bool,
-    default=False,
-    help='Test on the original pointcloud space as given by the dataset using kd-tree.')
+test_arg.add_argument('--evaluate_original_pointcloud', type=str2bool, default=False, help='Test on the original pointcloud space during network evaluation using voxel projection.')
+test_arg.add_argument('--test_original_pointcloud', type=str2bool, default=False, help='Test on the original pointcloud space as given by the dataset using kd-tree.')
 
 # Misc
 misc_arg = add_argument_group('Misc')
@@ -261,5 +199,5 @@ misc_arg.add_argument('--evaluate_benchmark', type=str2bool, default=False)
 
 
 def get_config():
-  config = parser.parse_args()
-  return config  # Training settings
+    config = parser.parse_args()
+    return config  # Training settings

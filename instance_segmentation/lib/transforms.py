@@ -273,7 +273,7 @@ class cfl_collate_fn_factory:
         self.limit_numpoints = limit_numpoints
 
     def __call__(self, list_data):
-        coords, feats, labels, instances = list(zip(*list_data))
+        coords, feats, labels, instances, transforms = list(zip(*list_data))
         coords_batch, feats_batch, labels_batch , instances_batch= [], [], [], []
 
         batch_id = 0
