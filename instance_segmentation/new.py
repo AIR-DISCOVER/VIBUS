@@ -217,6 +217,22 @@ def main_worker(rank=0, world_size=1, init_method=None):
         if rank == 0:
             logger.info("Dataloader setup done")
         train(model, train_dataloader, val_dataloader, config, logger, rank=rank, world_size=world_size)
+    elif config.do_validate:
+        val_dataset_cls = load_dataset(config.val_dataset)
+        val_dataloader = initialize_data_loader(
+            val_dataset_cls,
+            config,
+            num_workers=config.num_workers,
+            phase='val',
+            augment_data=False,
+            shuffle=False,
+            repeat=False,
+            batch_size=config.val_batch_size,
+            limit_numpoints=False,
+        )
+        val_loss, val_score, _, val_miou, iou_per_class, val_mAP = test(model, val_dataloader, config)
+        logger.info(f"Loss (avg): {val_loss:.4f}")
+        logger.info(f"mAP: {val_mAP:.4f}")
     if world_size > 1:
         dist.destroy_process_group()
 

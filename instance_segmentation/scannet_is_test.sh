@@ -1,20 +1,20 @@
 #!/bin/bash
-#SBATCH --job-name 20_fit_spec # 作业名为 example
-#SBATCH --output job_log/20_fit_spec_%J.out    # 屏幕上的输出文件重定向到 [JOBID].out
+#SBATCH --job-name pre_inseg_20 # 作业名为 example
+#SBATCH --output job_log/pre_inseg_20_%J.out    # 屏幕上的输出文件重定向到 [JOBID].out
 #SBATCH --gres gpu:a100:1  # 使用 1 张 A100 显卡
 #SBATCH --requeue
-#SBATCH --time 4-0
-NAME=20_fit_spec
+#SBATCH --time 5-0
+NAME=pre_lr_is_20
 echo $NAME
 
-WEIGHTS=/DATA_EDS/tb5zhh/legacy/3d_scene_understand/3DScanSeg/checkpoints/pretrain_20000.pth
-DATASET_PATH=/DATA_EDS/tb5zhh/legacy/3d_scene_understand/SUField/results_0223/generate_datasets/$NAME/train
-TEST_DATASET_PATH=/DATA_EDS/tb5zhh/legacy/3d_scene_understand/data/full/train
+WEIGHTS=/DATA_EDS/luoly/code_orginal/scannet_instance/pretrain/logs/pre_is_scannet_2W.pth
+DATASET_PATH=/DATA_EDS/luoly/datasets/Scannet/instance/full/train
+TEST_DATASET_PATH=/DATA_EDS/luoly/datasets/Scannet/instance/full/train
 
-TRAIN_BATCH_SIZE=22
-LR=0.3
+TRAIN_BATCH_SIZE=2
+LR=0.1
 MODEL=Res16UNet34C
-RUN_NAME=finetune_${NAME}_${LR}_${Scheduler}_${MODEL}
+RUN_NAME=finetune_${NAME}_${LR}_${MODEL}
 
 python -u new.py \
     --log_dir log \
@@ -26,14 +26,14 @@ python -u new.py \
     --num_classes 20 \
     --validate_step 100 \
     --optim_step 1 \
-    --val_batch_size 8  \
+    --val_batch_size 1 \
     --save_epoch 5 \
     --max_iter 30000 \
     --scheduler PolyLR \
-    --do_train \
-    --weights $WEIGHTS \
+    --do_validate \
     --run_name $RUN_NAME \
     --model $MODEL \
+    --weights $WEIGHTS \
     --lr $LR \
     --train_batch_size $TRAIN_BATCH_SIZE  \
     --scannet_path $DATASET_PATH \

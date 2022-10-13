@@ -140,7 +140,7 @@ def main_worker(rank=0, world_size=1, init_method=None):
     # Setup model
     num_in_channel = 3  # RGB
     # num_labels = val_dataloader.dataset.NUM_LABELS
-    num_labels = 13
+    num_labels = config.num_classes
     model_class = load_model(config.model)
     model = model_class(num_in_channel, num_labels, config)
 

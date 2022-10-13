@@ -30,7 +30,7 @@ python -u new.py \
     --save_epoch 10 \
     --max_iter 20000 \
     --scheduler PolyLR \
-    --do_train \
+    --do_validate \
     --run_name $RUN_NAME \
     --model $MODEL \
     --weights $WEIGHTS \

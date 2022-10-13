@@ -262,14 +262,14 @@ misc_arg.add_argument('--eval_result_dir', type=str, default='/')
 misc_arg.add_argument('--unc_stat_path', type=str, default='/')
 misc_arg.add_argument('--save_epoch', type=int, default=5)
 misc_arg.add_argument('--ignore_index', type=int, default=255)
-misc_arg.add_argument('--do_train', default=True, action='store_true')
+misc_arg.add_argument('--do_train', action='store_true')
 misc_arg.add_argument('--do_validate', action='store_true')
 misc_arg.add_argument('--do_unc_inference', action='store_true')
 misc_arg.add_argument('--do_unc_demo', action='store_true')
 misc_arg.add_argument('--unc_dataset', type=str, default="")
 misc_arg.add_argument('--do_verbose_inference', action='store_true')
 misc_arg.add_argument('--do_unc_render', action='store_true')
-
+misc_arg.add_argument('--num_classes', type=int, default=20)
 
 def get_config():
   config = parser.parse_args()
