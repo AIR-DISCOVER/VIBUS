@@ -5,20 +5,22 @@
 #SBATCH --requeue
 #SBATCH --time 4-0
 NAME=pre_new_S3_ss_20_2W
-
 echo $NAME
+
+WEIGHTS=/DATA_EDS/luoly/code/S3DIS_semantic/pretrain/log/2022-06-22.22:45:21/pre_ss_2W.pth
 DATASET_PATH=/DATA_EDS/luoly/datasets/S3DIS/Stanford_preprocessing/semantic/20
+TEST_DATASET_PATH=/DATA_EDS/luoly/datasets/S3DIS/Stanford_preprocessing/semantic/full
+
 TRAIN_BATCH_SIZE=20
 LR=0.1
-Scheduler=PolyLR
 MODEL=Res16UNet34C
 RUN_NAME=finetune_${NAME}_${LR}_${Scheduler}_${MODEL}
+
 python -u new.py \
     --log_dir log \
     --seed 42 \
     --train_dataset StanfordArea5Dataset \
     --val_dataset StanfordArea5testDataset \
-    --stanford3d_test_path /DATA_EDS/luoly/datasets/S3DIS/Stanford_preprocessing/semantic/full \
     --checkpoint_dir checkpoints \
     --num_workers 8 \
     --validate_step 100 \
@@ -26,14 +28,13 @@ python -u new.py \
     --val_batch_size 8  \
     --save_epoch 10 \
     --max_iter 20000 \
-    --scheduler $Scheduler \
+    --scheduler PolyLR \
     --do_train \
     --run_name $RUN_NAME \
     --model $MODEL \
-    --weights /DATA_EDS/luoly/code/S3DIS_semantic/pretrain/log/2022-06-22.22:45:21/pre_ss_2W.pth \
+    --weights $WEIGHTS \
     --lr $LR \
     --train_batch_size $TRAIN_BATCH_SIZE  \
     --stanford3d_path $DATASET_PATH \
+    --stanford3d_test_path $TEST_DATASET_PATH \
     --wandb False
-
-

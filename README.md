@@ -43,6 +43,5 @@ pip install \
     open3d==0.13.0
 ```
 
-
-
 ## Model Zoo
+

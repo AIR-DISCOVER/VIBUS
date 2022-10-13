@@ -5,19 +5,22 @@
 #SBATCH --requeue
 #SBATCH --time 5-0
 NAME=new_s3d_ss_20_6k
-
 echo $NAME
+
+WEIGHTS=
 DATASET_PATH=/home/aidrive/luoly/datasets/semantic3d_preprocess/20
+TEST_DATASET_PATH=/home/aidrive/luoly/datasets/semantic3d_preprocess
+
 TRAIN_BATCH_SIZE=1
 LR=0.1
 MODEL=Res16UNet34C
 RUN_NAME=finetune_${NAME}_${LR}_${MODEL}
+
 python -u new.py \
     --log_dir log \
     --seed 42 \
     --train_dataset SemanticVoxelizationDataset \
     --val_dataset SemanticVoxelizationtestDataset \
-    --semantic3d_test_path /home/aidrive/luoly/datasets/semantic3d_preprocess \
     --checkpoint_dir checkpoints \
     --num_workers 8 \
     --validate_step 50 \
@@ -32,4 +35,5 @@ python -u new.py \
     --lr $LR \
     --train_batch_size $TRAIN_BATCH_SIZE  \
     --semantic3d_path $DATASET_PATH \
-    --wandb True
+    --semantic3d_test_path $TEST_DATASET_PATH \
+    --wandb False
