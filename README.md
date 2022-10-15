@@ -200,22 +200,22 @@ cd instance_segmentation/
     <td rowspan="9">ScanNet</td>
     <td rowspan="4">Limited Annotations</td>
     <td>20 pts.</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/file/d/1w7xViC62FYkJEJaYwQCBzBCuzP5mVJSZ/view?usp=sharing">Google Drive</a></td>
     <td>Preparing</td>
   </tr>
   <tr>
     <td>50 pts.</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/file/d/1QpeXmjkxTytA_GDwTHFqaw-3aEltehWe/view?usp=sharing">Google Drive</a></td>
     <td>Preparing</td>
   </tr>
   <tr>
     <td>100 pts.</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/file/d/1w5tgCAp1qyFIZWrZTC_PxSWh-ss2CUIk/view?usp=sharing">Google Drive</a></td>
     <td>Preparing</td>
   </tr>
   <tr>
     <td>200 pts.</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/file/d/1RwoJrzVaSTqpAW8O5j5ou6cCSusVBvP1/view?usp=sharing">Google Drive</a></td>
     <td>Preparing</td>
   </tr>
   <tr>
