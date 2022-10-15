@@ -11,8 +11,8 @@ BATCH_SIZE=${BATCH_SIZE:-1}
 MODEL=${MODEL:-'Res16UNet34C'}
 
 # TODO specify 
-DATAPATH=$DATASET_PATH/scan_processed/train
-TESTDATAPATH=$DATASET_PATH/scan_processed/train
+DATAPATH=$DATASET_PATH
+TESTDATAPATH=$DATASET_PATH
 TIME=$(date +"%Y-%m-%d_%H-%M-%S")
 mkdir -p $LOG_DIR
 LOG="$LOG_DIR/$TIME.txt"

@@ -40,7 +40,8 @@ pip install \
     imageio==2.9.0 \
     plyfile==0.7.4 \
     tensorboardx==2.2 \
-    open3d==0.13.0
+    open3d==0.13.0 \
+    protobuf==3.20.0
 ```
 
 ## Testing

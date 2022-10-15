@@ -118,7 +118,7 @@ def get_rank():
 def get_world_size():
     try:
         return dist.get_world_size()
-    except AssertionError:
+    except:
         return 1
 
 def get_default_group():
