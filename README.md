@@ -246,11 +246,11 @@ cd instance_segmentation/
   </tr>
   <tr>
     <td>S3DIS</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1drdTVnwfh6Qo7LMka2XWV71NzQ58TuaZ?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td>Semantic3D</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1qWDbvsRzri7O4tpq69z9vhmJ65B2d2ba?usp=sharing">Google Drive</a></td>
   </tr>
 </tbody>
 </table></div>
@@ -282,98 +282,98 @@ cd instance_segmentation/
     <td rowspan="4">Limited Annotations</td>
     <td>20 pts.</td>
     <td><a href="https://drive.google.com/file/d/1w7xViC62FYkJEJaYwQCBzBCuzP5mVJSZ/view?usp=sharing">Google Drive</a></td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td>50 pts.</td>
     <td><a href="https://drive.google.com/file/d/1QpeXmjkxTytA_GDwTHFqaw-3aEltehWe/view?usp=sharing">Google Drive</a></td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td>100 pts.</td>
     <td><a href="https://drive.google.com/file/d/1w5tgCAp1qyFIZWrZTC_PxSWh-ss2CUIk/view?usp=sharing">Google Drive</a></td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td>200 pts.</td>
     <td><a href="https://drive.google.com/file/d/1RwoJrzVaSTqpAW8O5j5ou6cCSusVBvP1/view?usp=sharing">Google Drive</a></td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td rowspan="4">Limited Reconstructions</td>
     <td>1%</td>
-    <td>Preparing</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td>5%</td>
-    <td>Preparing</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td>10%</td>
-    <td>Preparing</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td>20%</td>
-    <td>Preparing</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td colspan="2">Full</td>
-    <td>Preparing</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
+    <td><a href="https://drive.google.com/drive/folders/1mP6T1FjS3ueL7m4j_2GU72FQiqklQTGe?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td rowspan="5">S3DIS</td>
     <td rowspan="4">Limited Annotations</td>
     <td>20 pts.</td>
-    <td>Preparing</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1drdTVnwfh6Qo7LMka2XWV71NzQ58TuaZ?usp=sharing">Google Drive</a></td>
+    <td><a href="https://drive.google.com/drive/folders/1drdTVnwfh6Qo7LMka2XWV71NzQ58TuaZ?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td>50 pts.</td>
-    <td>Preparing</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1drdTVnwfh6Qo7LMka2XWV71NzQ58TuaZ?usp=sharing">Google Drive</a></td>
+    <td><a href="https://drive.google.com/drive/folders/1drdTVnwfh6Qo7LMka2XWV71NzQ58TuaZ?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td>100 pts.</td>
-    <td>Preparing</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1drdTVnwfh6Qo7LMka2XWV71NzQ58TuaZ?usp=sharing">Google Drive</a></td>
+    <td><a href="https://drive.google.com/drive/folders/1drdTVnwfh6Qo7LMka2XWV71NzQ58TuaZ?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td>200 pts.</td>
-    <td>Preparing</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1drdTVnwfh6Qo7LMka2XWV71NzQ58TuaZ?usp=sharing">Google Drive</a></td>
+    <td><a href="https://drive.google.com/drive/folders/1drdTVnwfh6Qo7LMka2XWV71NzQ58TuaZ?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td colspan="2">Full</td>
-    <td>Preparing</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1drdTVnwfh6Qo7LMka2XWV71NzQ58TuaZ?usp=sharing">Google Drive</a></td>
+    <td><a href="https://drive.google.com/drive/folders/1drdTVnwfh6Qo7LMka2XWV71NzQ58TuaZ?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td rowspan="5">Semantic3D</td>
     <td rowspan="4">Limited Annotations</td>
     <td>20 pts.</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1qWDbvsRzri7O4tpq69z9vhmJ65B2d2ba?usp=sharing">Google Drive</a></td>
     <td rowspan="5">N/A</td>
   </tr>
   <tr>
     <td>50 pts.</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1qWDbvsRzri7O4tpq69z9vhmJ65B2d2ba?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td>100 pts.</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1qWDbvsRzri7O4tpq69z9vhmJ65B2d2ba?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td>200 pts.</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1qWDbvsRzri7O4tpq69z9vhmJ65B2d2ba?usp=sharing">Google Drive</a></td>
   </tr>
   <tr>
     <td colspan="2">Full</td>
-    <td>Preparing</td>
+    <td><a href="https://drive.google.com/drive/folders/1qWDbvsRzri7O4tpq69z9vhmJ65B2d2ba?usp=sharing">Google Drive</a></td>
   </tr>
 </tbody>
 </table></div>
