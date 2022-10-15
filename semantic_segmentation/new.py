@@ -229,7 +229,7 @@ def main_worker(rank=0, world_size=1, init_method=None):
         )
         if rank == 0:
             logger.info("Dataloader setup done")
-        val_loss, val_miou, iou_per_class = inference(model, val_dataloader, config, logger, rank=rank, world_size=world_size, evaluate=True)
+        val_loss, val_miou, iou_per_class = inference(model, val_dataloader, config, logger, rank=rank, world_size=world_size, evaluate=True, save=config.save_prediction)
         print(f"VAL: loss (avg): {val_loss.item():.4f}, iou (avg): {val_miou.item():.4f}")
         for idx, i in enumerate(iou_per_class):
             logger.info(f"VAL: iou (cls#{idx}): {i.item():.4f}")

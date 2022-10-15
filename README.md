@@ -147,6 +147,66 @@ cd instance_segmentation/
 ./s3dis_is_train.sh
 ```
 
+## Perform Spectral / Uncertainty Filtering (on ScanNet)
+
+### Spectral
+
+1. Collect the inference results
+
+   Please change `SAVE_PATH` in `scannet_ss_test_collect_pred.sh`
+
+   ```shell
+   cd semantic_segmentation/
+   ./scannet_ss_test_collect_pred.sh
+   ```
+
+2. Perform Spectrum Filtering
+
+   Please pass `SAVE_PATH` in step 1 as param for `--dataset_root`.
+  
+   ```shell
+   cd semantic_segmentation/
+   python fit.py --action spectrum --dataset_root /path/to/last/save/root --save_root /path/to/save/filtered/dataset
+   ```
+
+3. Use filtered dataset with pseudo labels to fine-tune model
+
+   Please change `DATASET_PATH` to the save path for filtered dataset in step 2 in `scannet_ss_train.sh`.
+
+   ```shell
+   cd semantic_segmentation/
+   ./scannet_ss_train.sh
+   ```
+
+### Uncertainty
+
+1. Collect the inference results
+
+   Please change `SAVE_PATH` in `scannet_ss_test_collect_pred_unc.sh`
+
+   ```shell
+   cd semantic_segmentation/
+   ./scannet_ss_test_collect_pred_unc.sh
+   ```
+
+2. Perform Spectrum Filtering
+
+   Please pass `SAVE_PATH` in step 1 as param for `--stat_root`.
+  
+   ```shell
+   cd semantic_segmentation/
+   python fit.py --action uncertainty --dataset_root /path/to/original/dataset --stat_root /path/to/last/save/root --save_root /path/to/save/filtered/dataset
+   ```
+
+3. Use filtered dataset with pseudo labels to fine-tune model
+
+   Please change `DATASET_PATH` to the save path for filtered dataset in step 2 in `scannet_ss_train.sh`.
+
+   ```shell
+   cd semantic_segmentation/
+   ./scannet_ss_train.sh
+   ```
+
 ## Model Zoo
 
 ### Viewpoint Bottleneck (VIB) Self-Supervised Pretrain
