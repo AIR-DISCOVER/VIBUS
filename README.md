@@ -44,6 +44,9 @@ pip install \
     protobuf==3.20.0
 
 pip install potpourri3d pymeshlab
+
+cd SUField/
+pip install -e . 
 ```
 
 ## Testing
@@ -92,6 +95,24 @@ You may specify the paths to datasets and checkpoints in `instance_segmentation/
 cd instance_segmentation/
 ./s3dis_is_test.sh
 ```
+
+## Visualization
+
+1. Collect the inference results
+
+   Please change `SAVE_PATH` in `scannet_ss_test_collect_pred.sh`
+
+   ```shell
+   cd semantic_segmentation/
+   ./scannet_ss_test_collect_pred.sh
+   ```
+
+2. Run a script so that the color of the point cloud is changed according to the predictions:
+   
+   ```shell
+   cd semantic_segmentation/
+   python visualize.py --dataset_root /save/path/in/step/1
+   ```
 
 ## Viewpoint-Bottleneck Pretraining (self supervised)
 
