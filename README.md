@@ -42,6 +42,8 @@ pip install \
     tensorboardx==2.2 \
     open3d==0.13.0 \
     protobuf==3.20.0
+
+pip install potpourri3d pymeshlab
 ```
 
 ## Testing

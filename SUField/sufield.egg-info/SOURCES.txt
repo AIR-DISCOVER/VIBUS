@@ -1,0 +1,12 @@
+setup.py
+sufield/__init__.py
+sufield/downsample.py
+sufield/fit.py
+sufield/spec_cluster.py
+sufield/utils.py
+sufield/vis.py
+sufield.egg-info/PKG-INFO
+sufield.egg-info/SOURCES.txt
+sufield.egg-info/dependency_links.txt
+sufield.egg-info/requires.txt
+sufield.egg-info/top_level.txt

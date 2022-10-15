@@ -5,9 +5,9 @@
 #SBATCH --requeue
 #SBATCH --time 4-0
 NAME=20_fit_spec
-echo $NAME
 
-WEIGHTS=/DATA_EDS/tb5zhh/legacy/3d_scene_understand/new_3dseg/stsegmentation/log/20_fit_unc_fixed/checkpoint_NoneRes16UNet34C.pth
+WEIGHTS=${WEIGHTS:-/DATA_EDS/tb5zhh/legacy/3d_scene_understand/new_3dseg/stsegmentation/log/20_fit_unc_fixed/checkpoint_NoneRes16UNet34C.pth}
+echo $WEIGHTS
 # WEIGHTS=/DATA_EDS/tb5zhh/legacy/3d_scene_understand/3DScanSeg/checkpoints/pretrain_20000.pth
 DATASET_PATH=/DATA_EDS/tb5zhh/legacy/3d_scene_understand/SUField/results_0223/generate_datasets/$NAME/train
 TEST_DATASET_PATH=/DATA_EDS/tb5zhh/legacy/3d_scene_understand/data/full/train
