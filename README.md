@@ -90,8 +90,14 @@ cd instance_segmentation/
 ./s3dis_is_test.sh
 ```
 
+## Viewpoint-Bottleneck Pretraining (self supervised)
 
-## Training
+```shell
+cd pretrain/
+./run.sh
+```
+
+## Supervised Training / Fine-tuning
 
 ### Semantic Segmentation on ScanNet
 
