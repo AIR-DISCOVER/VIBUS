@@ -24,7 +24,6 @@ import MinkowskiEngine as ME
 
 import wandb
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 def checkpoint(model, optimizer, scheduler, config, prefix='', world_size=1, **kwarg):
     """
     Save checkpoint of current model, optimizer, scheduler
@@ -231,7 +230,7 @@ def main_worker(rank=0, world_size=1, init_method=None):
         if rank == 0:
             logger.info("Dataloader setup done")
         val_loss, val_miou, iou_per_class = inference(model, val_dataloader, config, logger, rank=rank, world_size=world_size, evaluate=True)
-        logger.info(f"VAL: loss (avg): {val_loss.item():.4f}, iou (avg): {val_miou.item():.4f}")
+        print(f"VAL: loss (avg): {val_loss.item():.4f}, iou (avg): {val_miou.item():.4f}")
         for idx, i in enumerate(iou_per_class):
             logger.info(f"VAL: iou (cls#{idx}): {i.item():.4f}")
     elif config.do_unc_demo:
