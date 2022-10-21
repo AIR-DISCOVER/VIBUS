@@ -4,7 +4,7 @@
 
 This repository contains implementation and checkpoints of *VIBUS: Data-efficient 3D Scene Parsing with **VI**ewpoint **B**ottleneck and **U**ncertainty-**S**pectrum Modeling*.
 
-<!-- ## Citation -->
+Our work has been accepted by **ISPRS Journal of Photogrammetry and Remote Sensing**.
 
 ## Prepare Conda environment
 
