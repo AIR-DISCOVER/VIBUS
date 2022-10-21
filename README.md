@@ -2,9 +2,9 @@
 
 > Beiwen Tian, Liyi Luo, Hao Zhao, Guyue Zhou
 
-This repository contains implementation and checkpoints of *VIBUS: Data-efficient 3D Scene Parsing with **VI**ewpoint **B**ottleneck and **U**ncertainty-**S**pectrum Modeling*.
+This repository contains implementation and checkpoints of *VIBUS: Data-efficient 3D Scene Parsing with **VI**ewpoint **B**ottleneck and **U**ncertainty-**S**pectrum Modeling*. 
 
-Our work has been accepted by **ISPRS Journal of Photogrammetry and Remote Sensing**.
+Our work has been accepted by **ISPRS Journal of Photogrammetry and Remote Sensing**. Our paper is publicly available [here](https://arxiv.org/abs/2210.11472).
 
 ## Prepare Conda environment
 
